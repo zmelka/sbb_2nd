@@ -16,6 +16,23 @@ class SbbApplicationTests {
     @Autowired
     private QuestionRepository questionRepository;
 
+    @Autowired
+    private AnswerRepository answerRepository;
+
+    @Test
+    void testCreateAnswer() {
+        Optional<Question> oq = this.questionRepository.findById(2);
+        assertTrue(oq.isPresent());
+        Question q = oq.get();
+
+
+        Answer a1 = new Answer();
+        a1.setContent("sbb에 대해서 알고 싶습니다.");
+        a1.setCreateDate(LocalDateTime.now());
+        a1.setQuestion(q);
+        answerRepository.save(a1);
+    }
+
     @Test
     void testRemoveQuestion() {
         assertEquals(2,questionRepository.count());
