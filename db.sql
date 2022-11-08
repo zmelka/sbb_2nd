@@ -24,4 +24,4 @@ content = 'sbb에 대해서 알고 싶습니다.';
 INSERT INTO question
 SET create_date = NOW(),
 `subject` = '스프링부트 모델 질문입니다.',
-content = 'id는 자동으로 생성되나요?';
+content = 'id는 자동으로 생성되나요? ';
